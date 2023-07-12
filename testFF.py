@@ -3,7 +3,12 @@ import re
 import pandas as pd
 from bs4 import BeautifulSoup
 
-URL = "https://www.pro-football-reference.com/years/2022/passing.htm"
+stat_cat_URLs_22 = ["https://www.pro-football-reference.com/years/2022/passing.htm", 
+                    "https://www.pro-football-reference.com/years/2022/rushing.htm",
+                    "https://www.pro-football-reference.com/years/2022/receiving.htm"
+                    ]
+
+URL = "https://www.pro-football-reference.com/years/2022/receiving.htm"
 page = requests.get(URL)
 
 soup = BeautifulSoup(page.content, "html.parser")
@@ -18,4 +23,4 @@ row_data = [[td.getText() for td in data_rows[i].findAll('td')]
 # create the dataframe
 passing = pd.DataFrame(row_data)
 # export dataframe to a CSV 
-passing.to_csv("passing.csv", index=False)
+passing.to_csv("receiving.csv", index=False)
