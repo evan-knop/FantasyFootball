@@ -8,7 +8,7 @@ years_to_pull = ['2020', '2021', '2022']
 stats_to_pull = ['passing', 'rushing', 'receiving']
 
 passing_columns = ['']
-rushing_columns = ['player_name', 'team', 'age', 'pos', 'games_played', 'games_started',
+rushing_columns = ['player_name', 'year', 'team', 'age', 'pos', 'games_played', 'games_started',
                     'attempts', 'rushing_yards', 'rushing_tds', 'first_downs', 'longest_run', 
                     'yards_per_carry', 'yards_per_game', 'fumbles']
 receiving_columns = ['']
@@ -31,12 +31,13 @@ for year in years_to_pull:
                 player_info = player_info + ([((row.find('td')['data-append-csv'], row.find('td').getText()
                                                                     .replace('*', '').replace('+','')))])
         
-                
-
-
         'Parse stats for individual stats tables'
         row_data = [[td.getText() for td in data_rows[i].findAll('td')]
                     for i in range(len(data_rows))]
+        
+        'Add year column to end of stats data sets'
+        for row in row_data:
+            row.append(year)        
         
         'Create CSVs for stats'
         df = pd.DataFrame(row_data)
