@@ -30,23 +30,31 @@ for year in years_to_pull:
             if row.find('td'):
                 player_info = player_info + ([((row.find('td')['data-append-csv'], row.find('td').getText()
                                                                     .replace('*', '').replace('+','')))])
+        'Parse stats info for stats tables'
+        i=0    
+        player_stats = [['']]
+
+        for j in range(len(data_rows)):
+            pstats = data_rows[j].findAll('td')
+            for i in range(len(pstats)):
+                if i == 0:
+                    player_stats[j].append(pstats[0]['data-append-csv'])
+                    i+=1 
+                else:
+                    player_stats[j].append(pstats[i].getText().replace('*', '').replace('+',''))
+                    i+=1
+            j+=1
+            player_stats.append([''])
         
-        'Parse stats for individual stats tables'
-        row_data = [[td.getText() for td in data_rows[i].findAll('td')]
-                    for i in range(len(data_rows))]
-        
+
         'Add year column to end of stats data sets'
-        for row in row_data:
+        for row in player_stats:
             row.append(year)   
 
-        df = pd.DataFrame(row_data)
-        df.to_csv(stat + "_" + year + ".csv", index = False)     
-        
         'Create CSVs for stats'
-        df = pd.DataFrame(row_data)
+        df = pd.DataFrame(player_stats)
         df.to_csv(stat + "_" + year + ".csv", index = False)
 
         'Create CSV for player info'
         df = pd.DataFrame(player_info)
-        df.to_csv("PlayerInfo.csv", index = False) 
-
+        df.to_csv("PlayerInfo.csv", index = False)
