@@ -37,7 +37,10 @@ for year in years_to_pull:
         
         'Add year column to end of stats data sets'
         for row in row_data:
-            row.append(year)        
+            row.append(year)   
+
+        df = pd.DataFrame(row_data)
+        df.to_csv(stat + "_" + year + ".csv", index = False)     
         
         'Create CSVs for stats'
         df = pd.DataFrame(row_data)
@@ -45,4 +48,5 @@ for year in years_to_pull:
 
         'Create CSV for player info'
         df = pd.DataFrame(player_info)
-        df.to_csv("PlayerInfo.csv", index = False)
+        df.to_csv("PlayerInfo.csv", index = False) 
+
