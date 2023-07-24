@@ -14,23 +14,27 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 #Load CSVs
-all_files = glob.glob("passing*")
+all_files = glob.glob("passing*.csv")
 
 #Concatenate all files into one
 df = pd.concat([pd.read_csv(f, on_bad_lines='skip') for f in all_files]) 
 
-print(df)
+#Change nan values to None
+df = df.where((pd.notnull(df)), None)
+df = df.fillna(0)
 
-""" 
 #Truncate table before reloading
 cursor.execute("TRUNCATE TABLE FANTASY_FOOTBALL.passing")
 
  #loop through the data frame
 for i,row in df.iterrows():
-    sql = "INSERT INTO FANTASY_FOOTBALL.players VALUES (%s,%s)"
+    #Skip the empty rows from scraping header rows off of FBRef
+    if len(row[0]) <= 4:
+        continue
+    sql = "INSERT INTO FANTASY_FOOTBALL.passing VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
     cursor.execute(sql, tuple(row))
     print("Record inserted")
     conn.commit()
- """
+
 conn.close()
 

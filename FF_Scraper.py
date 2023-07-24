@@ -32,7 +32,7 @@ for year in years_to_pull:
                                                                     .replace('*', '').replace('+','')))])
         'Parse stats info for stats tables'
         i=0    
-        player_stats = [['']]
+        player_stats = [[]]
 
         for j in range(len(data_rows)):
             pstats = data_rows[j].findAll('td')
@@ -44,7 +44,7 @@ for year in years_to_pull:
                     player_stats[j].append(pstats[i].getText().replace('*', '').replace('+',''))
                     i+=1
             j+=1
-            player_stats.append([''])
+            player_stats.append([])
         
 
         'Add year column to end of stats data sets'
