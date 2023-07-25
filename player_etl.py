@@ -18,7 +18,7 @@ cursor.execute("TRUNCATE TABLE FANTASY_FOOTBALL.players")
 
  #loop through the data frame
 for i,row in df.iterrows():
-    sql = "INSERT INTO FANTASY_FOOTBALL.players VALUES (%s,%s)"
+    sql = "INSERT IGNORE INTO FANTASY_FOOTBALL.players VALUES (%s,%s)"
     cursor.execute(sql, tuple(row))
     print("Record inserted")
     conn.commit()

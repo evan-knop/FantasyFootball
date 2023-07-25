@@ -6,13 +6,7 @@ from bs4 import BeautifulSoup
 base_url = "https://www.pro-football-reference.com/years/"
 years_to_pull = ['2020', '2021', '2022']
 stats_to_pull = ['passing', 'rushing', 'receiving']
-
-passing_columns = ['']
-rushing_columns = ['player_name', 'year', 'team', 'age', 'pos', 'games_played', 'games_started',
-                    'attempts', 'rushing_yards', 'rushing_tds', 'first_downs', 'longest_run', 
-                    'yards_per_carry', 'yards_per_game', 'fumbles']
-receiving_columns = ['']
-player_columns = ['player_id', 'player_name']
+player_info = []
 
 for year in years_to_pull:
     for stat in stats_to_pull:
@@ -25,7 +19,6 @@ for year in years_to_pull:
         data_rows = results.find_all("tr")
 
         'Parse Player info for players table'
-        player_info = []
         for row in data_rows:
             if row.find('td'):
                 player_info = player_info + ([((row.find('td')['data-append-csv'], row.find('td').getText()
