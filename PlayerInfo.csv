@@ -1,21 +1,21 @@
 0,1,2,3,4,5,6,7
-JeffJu00,Justin Jefferson*+,MIN,23,WR,17,17,2022
-HillTy00,Tyreek Hill*+,MIA,28,WR,17,17,2022
-KelcTr00,Travis Kelce*+,KAN,33,TE,17,17,2022
-DiggSt00,Stefon Diggs*,BUF,29,WR,16,16,2022
+JeffJu00,Justin Jefferson,MIN,23,WR,17,17,2022
+HillTy00,Tyreek Hill,MIA,28,WR,17,17,2022
+KelcTr00,Travis Kelce,KAN,33,TE,17,17,2022
+DiggSt00,Stefon Diggs,BUF,29,WR,16,16,2022
 EkelAu00,Austin Ekeler,LAC,27,RB,17,17,2022
-LambCe00,CeeDee Lamb*,DAL,23,WR,17,17,2022
-StxxAm00,Amon-Ra St. Brown*,DET,23,WR,16,16,2022
+LambCe00,CeeDee Lamb,DAL,23,WR,17,17,2022
+StxxAm00,Amon-Ra St. Brown,DET,23,WR,16,16,2022
 GodwCh00,Chris Godwin,TAM,26,WR,15,13,2022
-AdamDa01,Davante Adams*+,LVR,30,WR,17,17,2022
+AdamDa01,Davante Adams,LVR,30,WR,17,17,2022
 PittMi01,Michael Pittman Jr.,IND,25,WR,16,16,2022
 SmitDe07,DeVonta Smith,PHI,24,WR,17,17,2022
 MetcDK00,D.K. Metcalf,SEA,25,WR,17,17,2022
-BrowAJ00,A.J. Brown*,PHI,25,WR,17,16,2022
-ChasJa00,Ja'Marr Chase*,CIN,22,WR,12,12,2022
-HockTJ00,T.J. Hockenson*,2TM,25,TE,17,14,2022
+BrowAJ00,A.J. Brown,PHI,25,WR,17,16,2022
+ChasJa00,Ja'Marr Chase,CIN,22,WR,12,12,2022
+HockTJ00,T.J. Hockenson,2TM,25,TE,17,14,2022
 JohnDi01,Diontae Johnson,PIT,26,WR,17,17,2022
-McCaCh01,Christian McCaffrey*,2TM,26,RB,17,16,2022
+McCaCh01,Christian McCaffrey,2TM,26,RB,17,16,2022
 KirkCh01,Christian Kirk,JAX,26,WR,17,17,2022
 LockTy00,Tyler Lockett,SEA,30,WR,16,16,2022
 WilsGa00,Garrett Wilson,NYJ,22,WR,17,12,2022
@@ -24,12 +24,12 @@ AiyuBr00,Brandon Aiyuk,SFO,24,WR,17,17,2022
 CoopAm00,Amari Cooper,CLE,28,WR,17,17,2022
 SmitJu00,JuJu Smith-Schuster,KAN,26,WR,16,14,2022
 EvanMi00,Mike Evans,TAM,29,WR,15,15,2022
-McLaTe00,Terry McLaurin*,WAS,27,WR,17,17,2022
+McLaTe00,Terry McLaurin,WAS,27,WR,17,17,2022
 KuppCo00,Cooper Kupp,LAR,29,WR,9,9,2022
 WaddJa00,Jaylen Waddle,MIA,24,WR,17,17,2022
 HiggTe00,Tee Higgins,CIN,23,WR,16,14,2022
 2022,,,,,,,
-AndrMa00,Mark Andrews*,BAL,27,TE,15,15,2022
+AndrMa00,Mark Andrews,BAL,27,TE,15,15,2022
 EngrEv00,Evan Engram,JAX,28,TE,17,14,2022
 FourLe00,Leonard Fournette,TAM,27,RB,16,9,2022
 HigbTy00,Tyler Higbee,LAR,29,TE,17,17,2022
@@ -50,7 +50,7 @@ FreiPa00,Pat Freiermuth,PIT,24,TE,16,8,2022
 MoorD.00,D.J. Moore,CAR,25,WR,17,17,2022
 WillMi07,Mike Williams,LAC,28,WR,13,13,2022
 PeopDo00,Donovan Peoples-Jones,CLE,23,WR,17,14,2022
-KittGe00,George Kittle*,SFO,29,TE,15,15,2022
+KittGe00,George Kittle,SFO,29,TE,15,15,2022
 LazaAl00,Allen Lazard,GNB,27,WR,15,15,2022
 MixoJo00,Joe Mixon,CIN,26,RB,14,14,2022
 OsboKJ00,K.J. Osborn,MIN,25,WR,17,9,2022
@@ -60,7 +60,7 @@ ConkTy00,Tyler Conklin,NYJ,27,TE,17,16,2022
 EverGe00,Gerald Everett,LAC,28,TE,16,11,2022
 NjokDa00,David Njoku,CLE,26,TE,14,14,2022
 2022,,,,,,,
-BarkSa00,Saquon Barkley*,NYG,25,RB,16,16,2022
+BarkSa00,Saquon Barkley,NYG,25,RB,16,16,2022
 CookBr00,Brandin Cooks,HOU,29,WR,13,13,2022
 HollMa00,Mack Hollins,LVR,29,WR,17,16,2022
 JameRi00,Richie James,NYG,27,WR,17,4,2022
@@ -69,7 +69,7 @@ SchuDa00,Dalton Schultz,DAL,26,TE,15,15,2022
 McKiJe00,Jerick McKinnon,KAN,30,RB,17,0,2022
 SamuDe00,Deebo Samuel,SFO,26,WR,13,12,2022
 GoedDa00,Dallas Goedert,PHI,27,TE,12,12,2022
-JacoJo01,Josh Jacobs*+,LVR,24,RB,17,17,2022
+JacoJo01,Josh Jacobs,LVR,24,RB,17,17,2022
 TonyRo00,Robert Tonyan,GNB,28,TE,17,3,2022
 WoodRo02,Robert Woods,TEN,30,WR,17,15,2022
 DortGr01,Greg Dortch,ARI,24,WR,16,4,2022
@@ -80,7 +80,7 @@ FantNo00,Noah Fant,SEA,25,TE,17,16,2022
 KmetCo00,Cole Kmet,CHI,23,TE,17,17,2022
 WhitRa01,Rachaad White,TAM,23,RB,17,8,2022
 DaviGa01,Gabriel Davis,BUF,23,WR,15,15,2022
-KnoxDa00,Dawson Knox*,BUF,26,TE,15,15,2022
+KnoxDa00,Dawson Knox,BUF,26,TE,15,15,2022
 MoorCh00,Chris Moore,HOU,29,WR,16,7,2022
 RobiDe01,Demarcus Robinson,BAL,28,WR,17,5,2022
 SwifDA00,D'Andre Swift,DET,23,RB,14,8,2022
@@ -108,9 +108,9 @@ PierAl00,Alec Pierce,IND,22,WR,16,12,2022
 WatsCh00,Christian Watson,GNB,23,WR,14,11,2022
 MoonDa00,Darnell Mooney,CHI,25,WR,12,12,2022
 ZaccOl01,Olamide Zaccheaus,ATL,25,WR,17,13,2022
-CookDa01,Dalvin Cook*,MIN,27,RB,17,17,2022
+CookDa01,Dalvin Cook,MIN,27,RB,17,17,2022
 GallMi00,Michael Gallup,DAL,26,WR,14,11,2022
-PollTo00,Tony Pollard*,DAL,25,RB,16,4,2022
+PollTo00,Tony Pollard,DAL,25,RB,16,4,2022
 SkowBe00,Ben Skowronek,LAR,25,WR,14,11,2022
 ThomLo00,Logan Thomas,WAS,31,TE,14,13,2022
 PeriSa00,Samaje Perine,CIN,27,RB,16,2,2022
@@ -119,7 +119,7 @@ SingDe00,Devin Singletary,BUF,25,RB,16,16,2022
 AkinJo00,Jordan Akins,HOU,30,TE,15,3,2022
 BurkRe00,Rex Burkhead,HOU,32,RB,16,0,2022
 CollNi00,Nico Collins,HOU,23,WR,10,7,2022
-DuveDe00,Devin Duvernay*,BAL,25,WR,14,13,2022
+DuveDe00,Devin Duvernay,BAL,25,WR,14,13,2022
 HodgIs00,Isaiah Hodgins,2TM,24,WR,10,5,2022
 2022,,,,,,,
 MoorEl00,Elijah Moore,NYJ,22,WR,16,9,2022
@@ -135,7 +135,7 @@ DissWi00,Will Dissly,SEA,26,TE,15,15,2022
 MontDa01,David Montgomery,CHI,25,RB,16,16,2022
 BurkTr00,Treylon Burks,TEN,22,WR,11,6,2022
 DulcGr00,Greg Dulcich,DEN,22,TE,10,6,2022
-HenrDe00,Derrick Henry*,TEN,28,RB,16,16,2022
+HenrDe00,Derrick Henry,TEN,28,RB,16,16,2022
 MoreFo00,Foster Moreau,LVR,25,TE,15,14,2022
 RobiAl02,Allen Robinson,LAR,29,WR,10,10,2022
 WatkQu00,Quez Watkins,PHI,24,WR,17,8,2022
@@ -163,7 +163,7 @@ ShahRa00,Rashid Shaheed,NOR,24,WR,12,6,2022
 TaylJo02,Jonathan Taylor,IND,23,RB,11,11,2022
 WallDa01,Darren Waller,LVR,30,TE,9,6,2022
 WarrJa01,Jaylen Warren,PIT,24,RB,16,0,2022
-ChubNi00,Nick Chubb*,CLE,27,RB,17,17,2022
+ChubNi00,Nick Chubb,CLE,27,RB,17,17,2022
 GoodMa00,Marquise Goodwin,SEA,32,WR,13,2,2022
 McKiJ.00,J.D. McKissic,WAS,29,RB,8,0,2022
 MurrLa00,Latavius Murray,2TM,32,RB,13,7,2022
@@ -186,7 +186,7 @@ JeffVa00,Van Jefferson,LAR,26,WR,11,9,2022
 2022,,,,,,,
 JoneJu02,Julio Jones,TAM,33,WR,10,5,2022
 PoweBr00,Brandon Powell,LAR,27,WR,17,6,2022
-AgneJa00,Jamal Agnew*,JAX,27,WR,15,0,2022
+AgneJa00,Jamal Agnew,JAX,27,WR,15,0,2022
 GainKe00,Kenneth Gainwell,PHI,23,RB,17,0,2022
 MillSc01,Scott Miller,TAM,25,WR,15,1,2022
 RobiWa01,Wan'Dale Robinson,NYG,21,WR,6,3,2022
@@ -206,12 +206,12 @@ BreiMa00,Matt Breida,NYG,27,RB,17,1,2022
 DorsPh00,Phillip Dorsett,HOU,29,WR,15,4,2022
 HastJa02,Jamycal Hasty,JAX,26,RB,17,0,2022
 OgunDa00,Dare Ogunbowale,HOU,28,RB,17,4,2022
-SandMi01,Miles Sanders*,PHI,25,RB,17,15,2022
+SandMi01,Miles Sanders,PHI,25,RB,17,15,2022
 AlieMo00,Mo Alie-Cox,IND,29,TE,17,11,2022
 FergJa00,Jake Ferguson,DAL,23,TE,16,8,2022
 GentZa00,Zach Gentry,PIT,26,TE,17,13,2022
 HallBr03,Breece Hall,NYJ,21,RB,7,2,2022
-JuszKy00,Kyle Juszczyk*,SFO,31,FB,16,12,2022
+JuszKy00,Kyle Juszczyk,SFO,31,FB,16,12,2022
 MundJo00,Johnny Mundt,MIN,28,TE,17,12,2022
 PettDa00,Dante Pettis,CHI,27,WR,17,7,2022
 2022,,,,,,,
@@ -279,7 +279,7 @@ MimsDe00,Denzel Mims,NYJ,25,WR,10,4,2022
 2022,,,,,,,
 MitcJa00,James Mitchell,DET,23,TE,14,0,2022
 MossZa00,Zack Moss,2TM,25,RB,13,3,2022
-RicaPa00,Patrick Ricard*,BAL,28,FB,17,16,2022
+RicaPa00,Patrick Ricard,BAL,28,FB,17,16,2022
 RobiJa00,James Robinson,2TM,24,RB,11,5,2022
 SillDa01,David Sills,NYG,26,WR,9,5,2022
 StolJa00,Jack Stoll,PHI,24,TE,17,11,2022
@@ -379,7 +379,7 @@ GaskMy00,Myles Gaskin,MIA,25,RB,4,0,2022
 GrifRy00,Ryan Griffin,CHI,32,TE,15,0,2022
 IngrKe01,Keaontay Ingram,ARI,23,RB,12,0,2022
 JohnDa08,David Johnson,NOR,31,RB,5,0,2022
-JoneMa06,Marcus Jones+,NWE,24,DB,15,4,2022
+JoneMa06,Marcus Jones,NWE,24,DB,15,4,2022
 KolaCh00,Charlie Kolar,BAL,23,TE,2,0,2022
 KrofTy00,Tyler Kroft,SFO,30,TE,11,4,2022
 KumeJa00,Jake Kumerow,BUF,30,WR,6,1,2022
@@ -473,7 +473,7 @@ DrisJe00,Jeff Driskel,HOU,29,QB,7,2,2022
 EvanDa02,Darrynton Evans,CHI,24,RB,6,0,2022
 EzukEr00,Erik Ezukanma,MIA,22,WR,1,0,2022
 GervJa00,Jake Gervase,LAR,27,LB,14,0,2022
-GoffJa00,Jared Goff*,DET,28,QB,17,17,2022
+GoffJa00,Jared Goff,DET,28,QB,17,17,2022
 GrayDa02,Danny Gray,SFO,23,WR,13,0,2022
 GrugKa00,Kamu Grugier-Hill,2TM,28,LB/OLB,15,6,2022
 HarrJa03,Jacob Harris,LAR,25,WR,7,0,2022
@@ -482,19 +482,19 @@ JohnTy03,Tyron Johnson,2TM,26,WR,4,1,2022
 JoneRo01,Ronald Jones II,KAN,25,RB,6,0,2022
 KinsMa00,Mason Kinsey,TEN,24,WR,2,0,2022
 MabrTy00,Tyler Mabry,SEA,26,TE,2,0,2022
-MahoPa00,Patrick Mahomes*+,KAN,27,QB,17,17,2022
+MahoPa00,Patrick Mahomes,KAN,27,QB,17,17,2022
 MoorJa02,Jason Moore,LAC,27,WR,6,0,2022
 OzigDe01,Devine Ozigbo,DEN,26,RB,4,0,2022
 RodgRi00,Richard Rodgers,LAC,30,TE,10,1,2022
 RuckJe00,Jeremy Ruckert,NYJ,22,TE,9,0,2022
-SewePe00,Penei Sewell*,DET,22,T,17,17,2022
+SewePe00,Penei Sewell,DET,22,T,17,17,2022
 SmitKe03,Keith Smith,ATL,30,FB,17,6,2022
 SmitIh00,Ihmir Smith-Marsette,2TM,23,,8,0,2022
 SweeTo00,Tommy Sweeney,BUF,27,TE,5,0,2022
 TaylJJ01,J.J. Taylor,NWE,24,RB,1,0,2022
 TaylPa01,Patrick Taylor,GNB,24,RB,14,0,2022
 2022,,,,,,,
-TurpKa00,KaVontae Turpin*,DAL,26,WR,17,0,2022
+TurpKa00,KaVontae Turpin,DAL,26,WR,17,0,2022
 WashDw00,Dwayne Washington,NOR,28,RB,12,0,2022
 WhitCo05,Cody White,PIT,24,WR,1,1,2022
 WillJa11,Jameson Williams,DET,21,WR,6,0,2022

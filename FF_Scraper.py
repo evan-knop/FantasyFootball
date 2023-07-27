@@ -33,7 +33,7 @@ for year in years_to_pull:
                 if i == 0:
                     player_stats[j].append(pstats[0]['data-append-csv'])
                     player_info[j].append(pstats[0]['data-append-csv'])
-                    player_info[j].append(pstats[0].getText())
+                    player_info[j].append(pstats[0].getText().replace('*', '').replace('+',''))
                     i+=1 
                 elif i >=1 and i<=5:
                     player_stats[j].append(pstats[i].getText().replace('*', '').replace('+',''))

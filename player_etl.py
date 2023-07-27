@@ -13,12 +13,19 @@ df = pd.read_csv("PlayerInfo.csv")
 
 cursor = conn.cursor()
 
+#Change nan values to None
+df = df.where((pd.notnull(df)), None)
+df = df.fillna(0)
+
 #Truncate table before reloading
 cursor.execute("TRUNCATE TABLE FANTASY_FOOTBALL.players")
 
  #loop through the data frame
 for i,row in df.iterrows():
-    sql = "INSERT IGNORE INTO FANTASY_FOOTBALL.players VALUES (%s,%s)"
+    #Skip the empty rows from scraping header rows off of FBRef
+    if len(row[0]) <= 4:
+        continue
+    sql = "INSERT IGNORE INTO FANTASY_FOOTBALL.players VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
     cursor.execute(sql, tuple(row))
     print("Record inserted")
     conn.commit()
