@@ -1,11 +1,13 @@
 CREATE OR REPLACE VIEW FANTASY_FOOTBALL.total_stats AS
+
+#CREATE OR REPLACE VIEW FANTASY_FOOTBALL.total_stats AS
 SELECT pl.player_name, 
-	re.year,
-    re.team,
-    re.age,
-    re.pos,
-    re.games_played,
-    re.games_started,
+	pl.year,
+    pl.team,
+    pl.age,
+    pl.position,
+    pl.games_played,
+    pl.games_started,
     re.targets,
     re.receptions,
     re.catch_pct,
@@ -17,9 +19,17 @@ SELECT pl.player_name,
     re.yards_per_target,
     re.catches_per_game,
     re.receiving_yards_per_game,
-    re.fumbles
+    (re.fumbles + ru.fumbles) / 2 AS total_fumbles,
+    ru.rushing_attempts,
+    ru.rushing_yards,
+    ru.rushing_tds,
+    ru.rushing_first_downs,
+    ru.longest_rush,
+    ru.yards_per_attempt,
+    ru.yards_per_game,
+    ru.rushing_yards + re.receiving_yards as total_yards,
+    ru.rushing_tds + re.receiving_tds as total_tds
 FROM FANTASY_FOOTBALL.players pl
-JOIN FANTASY_FOOTBALL.receiving re on pl.player_id = re.player_id
-JOIN FANTASY_FOOTBALL.rushing ru on pl.player_id = ru.player_id AND ru.year = re.year
-ORDER BY receiving_yards desc;
-
+LEFT OUTER JOIN FANTASY_FOOTBALL.receiving re on pl.player_id = re.player_id AND pl.year = re.year
+LEFT OUTER JOIN FANTASY_FOOTBALL.rushing ru on pl.player_id = ru.player_id and pl.year = ru.year
+ORDER BY total_tds desc;
