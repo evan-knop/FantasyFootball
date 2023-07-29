@@ -50,8 +50,8 @@ for year in years_to_pull:
 
         'Create CSVs for stats'
         df = pd.DataFrame(player_stats)
-        df.to_csv(stat + "_" + year + ".csv", index = False)
+        df.to_csv("CSVs/" + stat + "_" + year + ".csv", index = False)
 
         'Create CSV for player info'
         df = pd.DataFrame(player_info)
-        df.to_csv("PlayerInfo_" + year + ".csv", index = False)
+        df.to_csv("CSVs/PlayerInfo_" + year + ".csv", index = False)
