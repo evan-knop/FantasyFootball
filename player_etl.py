@@ -1,5 +1,6 @@
 import mysql.connector
 import pandas as pd
+import glob
 
 #Connecting to MySQL DB - local host
 conn = mysql.connector.connect(
@@ -12,6 +13,12 @@ conn = mysql.connector.connect(
 df = pd.read_csv("PlayerInfo.csv")
 
 cursor = conn.cursor()
+
+#Load CSVs
+all_files = glob.glob("PlayerInfo*.csv")
+
+#Concatenate all files into one
+df = pd.concat([pd.read_csv(f, on_bad_lines='skip') for f in all_files]) 
 
 #Change nan values to None
 df = df.where((pd.notnull(df)), None)

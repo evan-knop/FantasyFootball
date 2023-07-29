@@ -17,12 +17,7 @@ for year in years_to_pull:
         results = soup.find("tbody")
         data_rows = results.find_all("tr")
 
-        'Parse Player info for players table'
-        """ for row in data_rows:
-            if row.find('td'):
-                player_info = player_info + ([((row.find('td')['data-append-csv'], row.find('td').getText()
-                                                                    .replace('*', '').replace('+','')))]) """
-        'Parse stats info for stats tables'
+        'Parse data into tables'
         i=0    
         player_stats = [[]]
         player_info = [[]]
@@ -46,7 +41,6 @@ for year in years_to_pull:
             player_stats.append([])
             player_info.append([])
         
-
         'Add year column to end of stats data sets'
         for row in player_stats:
             row.append(year)   
@@ -60,4 +54,4 @@ for year in years_to_pull:
 
         'Create CSV for player info'
         df = pd.DataFrame(player_info)
-        df.to_csv("PlayerInfo.csv", index = False)
+        df.to_csv("PlayerInfo_" + year + ".csv", index = False)
