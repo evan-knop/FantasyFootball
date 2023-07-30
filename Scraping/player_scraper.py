@@ -38,7 +38,9 @@ for player in player_list:
     page = requests.get(current_url)
     soup = BeautifulSoup(page.content, "html.parser")
 
-    player_divs = soup.find_all("div")
+    player_divs = soup.find("div", id='meta')
+    photo_div = player_divs.find_all(class_='media-item')
+    player_info = player_divs.find_all(class_='players', id='info')
 
     i=1 
     #Prevent FB ref from blocking us
