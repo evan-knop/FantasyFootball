@@ -9,13 +9,11 @@ conn = mysql.connector.connect(
     password = "root",
     database = "FANTASY_FOOTBALL"
 )
-#Load CSV
-df = pd.read_csv("PlayerInfo.csv")
-
+#Create cursor
 cursor = conn.cursor()
 
 #Load CSVs
-all_files = glob.glob("PlayerInfo*.csv")
+all_files = glob.glob("CSVs/PlayerInfo*.csv")
 
 #Concatenate all files into one
 df = pd.concat([pd.read_csv(f, on_bad_lines='skip') for f in all_files]) 

@@ -14,7 +14,7 @@ conn = mysql.connector.connect(
 cursor = conn.cursor()
 
 #Load CSVs
-all_files = glob.glob("rushing*.csv")
+all_files = glob.glob("CSVs/rushing*.csv")
 
 #Concatenate all files into one
 df = pd.concat([pd.read_csv(f, on_bad_lines='skip') for f in all_files]) 

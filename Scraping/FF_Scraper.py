@@ -1,16 +1,17 @@
-import requests
-import re
+import requests, time
 import pandas as pd
 from bs4 import BeautifulSoup
 
 base_url = "https://www.pro-football-reference.com/years/"
-years_to_pull = ['2020', '2021', '2022']
+years_to_pull = ['2017', '2018', '2019', '2020', '2021', '2022']
 stats_to_pull = ['passing', 'rushing', 'receiving']
 
 for year in years_to_pull:
     for stat in stats_to_pull:
         current_URL = base_url + year + "/" + stat + ".htm"
         page = requests.get(current_URL)
+        #Make sure we are not spamming the site
+        time.sleep(5)
 
         soup = BeautifulSoup(page.content, "html.parser")
 

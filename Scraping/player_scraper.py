@@ -40,7 +40,10 @@ for player in player_list:
 
     player_divs = soup.find("div", id='meta')
     photo_div = player_divs.find_all(class_='media-item')
-    player_info = player_divs.find_all(class_='players', id='info')
+    player_info = player_divs.getText()
+
+    #Split text into array
+    player_info = player_info.splitlines()
 
     i=1 
     #Prevent FB ref from blocking us
