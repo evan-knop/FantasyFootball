@@ -6,9 +6,11 @@ function PlayerProfiles() {
   const [searchTerm, setSearchTerm] = useState('');
   const [data, setData] = useState([]);
 
+
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/search?searchterm=${searchTerm}`);
+      const response = await axios.get(`http://localhost:5000/search?searchTerm=${searchTerm}`);
+      console.log(response);
       setData(response.data);
     } catch (error) {
       console.error('API request error:', error);
