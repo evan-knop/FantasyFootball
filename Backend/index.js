@@ -25,7 +25,7 @@ connection.connect((err) => {
 
 // Example API endpoint to fetch data from MySQL
 app.get('/api/data', (req, res) => {
-  const query = 'SELECT * FROM your_table_name'; // Replace your_table_name with the actual table name in your database
+  const query = 'SELECT * FROM total_stats LIMIT 50'; 
   connection.query(query, (err, results) => {
     if (err) throw err;
     res.json(results);
