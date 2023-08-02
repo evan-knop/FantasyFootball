@@ -38,6 +38,42 @@ app.get('/search', (req, res) => {
   });
 });
 
+app.get('/suggestions/:value', (req, res) => {
+    const value = req.params.value;
+    // Query your database or other data source for suggestions based on the value
+    // Example: 
+    const query = `SELECT DISTINCT player_name FROM total_stats WHERE player_name LIKE ? LIMIT 5`
+    const valueParam = `%${value}%`;
+
+    connection.query(query, [valueParam], (err, results) => {
+        if (err) {
+          console.error('Database query error:', err);
+          res.status(500).send('Error fetching suggestions');
+        } else {
+          const suggestions = results.map(row => row.player_name);
+          res.json(suggestions);
+        }
+    });
+});
+
+app.get('/playerData/:playerName', (req, res) => {
+    const playerName = req.params.playerName;
+  
+    // Query your database to fetch player data based on the player name
+    const query = 'SELECT * FROM total_stats WHERE player_name = ? ORDER BY YEAR DESC';
+  
+    connection.query(query, [playerName], (err, results) => {
+      if (err) {
+        console.error('Database query error:', err);
+        res.status(500).send('Error fetching player data');
+      } else {
+        const playerData = results; // Assuming you only expect one result
+        res.json(playerData);
+      }
+    });
+  });
+  
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

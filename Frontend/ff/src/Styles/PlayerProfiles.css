@@ -42,4 +42,44 @@
   .data-table tr:hover {
     background-color: #f4f4f4;
   }
+/* Suggestion CSS */ 
+  .suggestions {
+    position: relative;
+  }
+  
+  /* Style for each suggestion item */
+  .suggestion {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 25%; 
+    max-width: 100%; /* Ensure suggestions don't exceed container width */
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflow text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 8px auto;
+  }    
+
+  
+  /* Hover effect */
+  .suggestion:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Style for the selected suggestion */
+.suggestion.selected {
+  background-color: #f0f0f0;
+}
+
+/* Style for the selected data container */
+.selected-data {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f5f5f5;
+}
   
