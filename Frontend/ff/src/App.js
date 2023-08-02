@@ -5,17 +5,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Landing from './Landing';
 import Layout from './Layout';
-import PlayerProfiles from './PlayerProfiles';
+import PlayerProfiles from './Components/PlayerProfiles';
 
 const App = () => {
   const [data, setData] = useState([]);
 
-  useEffect(() => {
+/*   useEffect(() => {
     // Fetch data from the backend API
     axios.get('http://localhost:5000/api/data')
       .then(response => setData(response.data))
       .catch(error => console.error(error));
-  }, []);
+  }, []); */
 
   
   return (

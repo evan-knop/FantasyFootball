@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
             <Link to="/"></Link>
           </li>
           <li>
-            <Link to="/Landing">Home</Link>
+            <Link to="/">Home</Link>
           </li>
         </ul>
       </nav>
