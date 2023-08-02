@@ -34,6 +34,9 @@ function PlayerProfiles() {
             <th>Name</th>
             <th>Position</th>
             <th>Year</th>
+            <th>Fantasy Points</th>
+            <th>Total Yards</th>
+            <th>Total TDs</th>
           </tr>
         </thead>
         <tbody>
@@ -42,6 +45,9 @@ function PlayerProfiles() {
               <td>{item.player_name}</td>
               <td>{item.position}</td>
               <td>{item.year}</td>
+              <td>{item.ppr_total_points}</td>
+              <td>{item.total_yards}</td>
+              <td>{item.total_tds}</td>
             </tr>
           ))}
         </tbody>
