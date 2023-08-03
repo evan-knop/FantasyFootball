@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
 import Landing from './Landing';
-import Layout from './Layout';
+import Layout from './Components/Layout';
 import PlayerProfiles from './Components/PlayerProfiles';
 
 const App = () => {

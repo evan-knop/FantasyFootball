@@ -24,19 +24,7 @@ connection.connect((err) => {
 });
 
 // Example API endpoint to fetch data from MySQL
-app.get('/search', (req, res) => {
-    const searchTerm = req.query.searchTerm;
-    const query = `SELECT * FROM FANTASY_FOOTBALL.total_stats WHERE player_name LIKE ?`; 
-    const searchTermParam = `%${searchTerm}%`;
 
-    console.log("sT: " + req)
-    console.log(searchTermParam)
-    
-  connection.query(query, [searchTermParam], (err, results) => {
-    if (err) throw err;
-    res.json(results);
-  });
-});
 
 app.get('/suggestions/:value', (req, res) => {
     const value = req.params.value;

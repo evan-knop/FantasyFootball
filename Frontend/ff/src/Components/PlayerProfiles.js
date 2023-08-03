@@ -8,6 +8,8 @@ function PlayerProfiles() {
   const [suggestions, setSuggestions] = useState([]);
   const [selectedSuggestion, setSelectedSuggestion] = useState(null);
   const [playerData, setPlayerData] = useState(null);
+  const [searchBoxTop, setSearchBoxTop] = useState(false);
+
 
 
   const handleSearch = async () => {
@@ -36,7 +38,9 @@ function PlayerProfiles() {
 
   const handleSuggestionSelect = async (suggestion) => {
     setSelectedSuggestion(suggestion);
-    setSuggestions([]); // Clear suggestions once a selection is made
+    setSuggestions([]); //Clear suggestions once a selection is made
+    setSearchBoxTop(true); //Move the search box to the top of the screen
+
 
     try {
       const response = await axios.get(`http://localhost:5000/playerData/${suggestion}`);
@@ -55,62 +59,68 @@ function PlayerProfiles() {
   useEffect(() => {
     if (!selectedSuggestion) {
       setPlayerData(null); // Clear player data when no suggestion is selected
+      setSearchBoxTop(false); // Move the search box back to the middle
     }
   }, [selectedSuggestion]);
 
   return (   
-    <div className="PlayerProfiles">
-      <div className="search-bar">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={(e) => handleInputChange(e.target.value)}
-          placeholder="Search Player"
-        />
-        {/* <button onClick={handleSearch}>Search</button> */}
-        <div className="suggestions">
-          {suggestions.map((suggestion, index) => (
-            <div key={index} className={`suggestion ${selectedSuggestion === suggestion ? 'selected' : ''}`}
-            onClick={() => handleSuggestionSelect(suggestion)}>
-              {suggestion}
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="selected-data">
-        {selectedSuggestion &&  (
-          <div>
-            <h1>{selectedSuggestion}</h1>
+    <div className={`PlayerProfiles ${searchBoxTop ? 'search-top' : 'search-middle'}`}>
+      <div className="PlayerProfiles">
+        <div className="search-bar">
+          <input
+            className="playerSearch"
+            type="text"
+            value={searchTerm}
+            onChange={(e) => handleInputChange(e.target.value)}
+            placeholder="Search Player"
+          />
+          {/* <button onClick={handleSearch}>Search</button> */}
+          <div className="suggestions">
+            {suggestions.map((suggestion, index) => (
+              <div key={index} className={`suggestion ${selectedSuggestion === suggestion ? 'selected' : ''}`}
+              onClick={() => handleSuggestionSelect(suggestion)}>
+                {suggestion}
+              </div>
+            ))}
           </div>
-        )}
-      </div>
-      <table>
-      {selectedSuggestion && ( 
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Year</th>
-            <th>Fantasy Points</th>
-            <th>Total Yards</th>
-            <th>Total TDs</th>
-          </tr>
-        </thead>  
-        )}
-        {selectedSuggestion && playerData && (
-        <tbody>
-          {playerData.map((item) => (
-            <tr key={item.view_key}>
-              <td>{item.player_name}</td>
-              <td>{item.position}</td>
-              <td>{item.year}</td>
-              <td>{item.ppr_total_points}</td>
-              <td>{item.total_yards}</td>
-              <td>{item.total_tds}</td>
+        </div>
+        <div className="selected-data">
+          {selectedSuggestion &&  (
+            <div>
+              <h1>{selectedSuggestion}</h1>
+            </div>
+          )}
+        </div>
+        <table>
+        {selectedSuggestion && ( 
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Team</th>
+              <th>Games Played</th>
+              <th>Total Yards</th>
+              <th>Total TDs</th>
+              <th>Fantasy Points</th>
+              <th>Position Rank</th>
             </tr>
-          ))}
-        </tbody> )}
-      </table> 
+          </thead>  
+          )}
+          {selectedSuggestion && playerData && (
+          <tbody>
+            {playerData.map((item) => (
+              <tr key={item.view_key}>
+                <td>{item.year}</td>
+                <td>{item.team}</td>
+                <td>{item.games_played}</td>
+                <td>{item.total_yards}</td>
+                <td>{item.total_tds}</td>               
+                <td>{item.ppr_total_points}</td>
+                <td>{item.half_ppr_pos_rank}</td>
+              </tr>
+            ))}
+          </tbody> )}
+        </table> 
+      </div>
     </div>
   );
           };

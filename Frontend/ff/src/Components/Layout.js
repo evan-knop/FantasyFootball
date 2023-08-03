@@ -1,6 +1,7 @@
 // src/components/Layout.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../Styles/Layout.css'
 
 const Layout = ({ children }) => {
   return (
