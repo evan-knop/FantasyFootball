@@ -1,24 +1,44 @@
-import React from 'react';
-import '../Styles/Roadmap.css'; 
-import FadeIn from '../Components/FadeIn.js';
-
+import React, { useState } from 'react';
+import '../Styles/Roadmap.css';
+import '../Styles/FadeIn.css'
+import FadeIn from './FadeIn';
 
 const Roadmap = () => {
+  const [expandedSections, setExpandedSections] = useState([]);
+
+  const toggleSection = (sectionIndex) => {
+    if (expandedSections.includes(sectionIndex)) {
+      setExpandedSections(expandedSections.filter((index) => index !== sectionIndex));
+    } else {
+      setExpandedSections([...expandedSections, sectionIndex]);
+    }
+  };
+
+  const roadmapData = [
+    {
+      title: 'Feature 1',
+      description: 'Description of Feature 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    },
+    {
+      title: 'Feature 2',
+      description: 'Description of Feature 2 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    },
+    // Add more feature data
+  ];
+
   return (
     <FadeIn>
-<div className="roadmap-container">
-      <h1>Site Roadmap</h1>
-      <div className="timeline">
-        <div className="timeline-item">
-          <h2>Feature 1</h2>
-          <p>Description of Feature 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div className="roadmap-container">
+        <h1>Project Roadmap</h1>
+        <div className="timeline">
+            {roadmapData.map((feature, index) => (
+            <div key={index} className={`timeline-item ${expandedSections.includes(index) ? 'expanded' : ''}`}>
+                <h2 onClick={() => toggleSection(index)}>{feature.title}</h2>
+                {expandedSections.includes(index) && <p>{feature.description}</p>}
+            </div>
+            ))}
         </div>
-        <div className="timeline-item">
-          <h2>Feature 2</h2>
-          <p>Description of Feature 2 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
-      </div>
-    </div>
     </FadeIn>
   );
 };
