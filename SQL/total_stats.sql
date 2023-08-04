@@ -57,7 +57,8 @@ SELECT pl.player_id,
 	((IFNULL(re.receptions,0) * 0.5) + (IFNULL(re.receiving_yards,0) * 0.1) + (IFNULL(re.receiving_tds,0) * 6) + (IFNULL(ru.rushing_yards,0) * 0.1) + (IFNULL(ru.rushing_tds,0) * 6) + (IFNULL(pa.passing_yards,0) / 25) + (IFNULL(pa.passing_tds,0) * 6)) as half_ppr_total_points,
     CONCAT(position, rank() OVER (partition by position, year order by ((IFNULL(re.receptions,0) * 0.5) + (IFNULL(re.receiving_yards,0) * 0.1) + (IFNULL(re.receiving_tds,0) * 6) + (IFNULL(ru.rushing_yards,0) * 0.1) + (IFNULL(ru.rushing_tds,0) * 6) + (IFNULL(pa.passing_yards,0) / 25) + (IFNULL(pa.passing_tds,0) * 6)) desc)) AS 'half_ppr_pos_rank',
 	((IFNULL(re.receiving_yards,0) * 0.1) + (IFNULL(re.receiving_tds,0) * 6) + (IFNULL(ru.rushing_yards,0) * 0.1) + (IFNULL(ru.rushing_tds,0) * 6) + (IFNULL(pa.passing_yards,0) / 25) + (IFNULL(pa.passing_tds,0) * 6)) as std_total_points,
-    CONCAT(position, rank() OVER (partition by position, year order by ((IFNULL(re.receiving_yards,0) * 0.1) + (IFNULL(re.receiving_tds,0) * 6) + (IFNULL(ru.rushing_yards,0) * 0.1) + (IFNULL(ru.rushing_tds,0) * 6) + (IFNULL(pa.passing_yards,0) / 25) + (IFNULL(pa.passing_tds,0) * 6)) desc)) AS 'std_pos_rank'
+    CONCAT(position, rank() OVER (partition by position, year order by ((IFNULL(re.receiving_yards,0) * 0.1) + (IFNULL(re.receiving_tds,0) * 6) + (IFNULL(ru.rushing_yards,0) * 0.1) + (IFNULL(ru.rushing_tds,0) * 6) + (IFNULL(pa.passing_yards,0) / 25) + (IFNULL(pa.passing_tds,0) * 6)) desc)) AS 'std_pos_rank',
+    CONCAT(pl.player_id, "|", pl.year) AS view_key 
 FROM FANTASY_FOOTBALL.players pl
 LEFT OUTER JOIN FANTASY_FOOTBALL.receiving re on pl.player_id = re.player_id AND pl.year = re.year
 LEFT OUTER JOIN FANTASY_FOOTBALL.rushing ru on pl.player_id = ru.player_id and pl.year = ru.year

@@ -1,12 +1,36 @@
 .roadmap-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    text-align: center;
+    padding: 40px;
   }
   
   h1 {
-    font-size: 24px;
+    font-size: 28px;
     margin-bottom: 20px;
+  }
+  
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    max-width: 400px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .timeline-item h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .timeline-item p {
+    font-size: 16px;
+    color: #333;
   }
   

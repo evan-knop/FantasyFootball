@@ -1,14 +1,18 @@
 import requests, time
 import pandas as pd
 from bs4 import BeautifulSoup
+import os
+
+#Set directory
+os.chdir('/Users/evan/Documents/_CODE/FantasyFootball/')
 
 base_url = "https://www.pro-football-reference.com/years/"
-#years_to_pull = ['2017', '2018', '2019', '2020', '2021', '2022']
-years_to_pull = ['2022']
-#stats_to_pull = ['passing', 'rushing', 'receiving']
-stats_to_pull = ['passing']
+years_to_pull = ['2017', '2018', '2019', '2020', '2021', '2022']
+stats_to_pull = ['passing', 'rushing', 'receiving']
+
 
 for year in years_to_pull:
+    player_info = [[]]
     for stat in stats_to_pull:
         current_URL = base_url + year + "/" + stat + ".htm"
         page = requests.get(current_URL)
@@ -53,8 +57,13 @@ for year in years_to_pull:
 
         'Create CSVs for stats'
         df = pd.DataFrame(player_stats)
-        df.to_csv("CSVs/" + stat + "_" + year + ".csv", index = False)
+        df.to_csv("/Users/evan/Documents/_CODE/FantasyFootball/CSVs/" + stat + "_" + year + ".csv", index = False)
+        print(stat + " " + year + " CSV completed.")
 
         'Create CSV for player info'
         df = pd.DataFrame(player_info)
-        df.to_csv("CSVs/PlayerInfo_" + year + ".csv", index = False)
+        df.to_csv("/Users/evan/Documents/_CODE/FantasyFootball/CSVs/PlayerInfo_" + stat + "_" + year + ".csv", index = False)
+        print("Player Info " + stat + " " + year + " CSV completed.")
+
+
+
