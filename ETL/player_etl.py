@@ -22,6 +22,9 @@ df = pd.concat([pd.read_csv(f, on_bad_lines='skip') for f in all_files])
 df = df.where((pd.notnull(df)), None)
 df = df.fillna(0)
 
+#Create csv for testing
+df.to_csv("CSVs/PlayerInfoTest.csv", index = False)
+
 #Truncate table before reloading
 cursor.execute("TRUNCATE TABLE FANTASY_FOOTBALL.players")
 

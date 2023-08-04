@@ -9,10 +9,13 @@ const Layout = ({ children }) => {
       <nav>
         <ul>
           <li>
-            <Link to="/"></Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/PlayerProfiles">Player Profiles</Link>
+          </li>
+          <li>
+            <Link to="/Roadmap">Site Roadmap</Link>
           </li>
         </ul>
       </nav>

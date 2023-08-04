@@ -1,4 +1,3 @@
-// index.js (Backend server)
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -23,13 +22,8 @@ connection.connect((err) => {
   console.log('Connected to MySQL database!');
 });
 
-// Example API endpoint to fetch data from MySQL
-
-
 app.get('/suggestions/:value', (req, res) => {
     const value = req.params.value;
-    // Query your database or other data source for suggestions based on the value
-    // Example: 
     const query = `SELECT DISTINCT player_name FROM total_stats WHERE player_name LIKE ? LIMIT 5`
     const valueParam = `%${value}%`;
 
@@ -47,7 +41,7 @@ app.get('/suggestions/:value', (req, res) => {
 app.get('/playerData/:playerName', (req, res) => {
     const playerName = req.params.playerName;
   
-    // Query your database to fetch player data based on the player name
+    // Query database to fetch player data based on the player name
     const query = 'SELECT * FROM total_stats WHERE player_name = ? ORDER BY YEAR DESC';
   
     connection.query(query, [playerName], (err, results) => {
@@ -55,7 +49,7 @@ app.get('/playerData/:playerName', (req, res) => {
         console.error('Database query error:', err);
         res.status(500).send('Error fetching player data');
       } else {
-        const playerData = results; // Assuming you only expect one result
+        const playerData = results;
         res.json(playerData);
       }
     });

@@ -3,8 +3,10 @@ import pandas as pd
 from bs4 import BeautifulSoup
 
 base_url = "https://www.pro-football-reference.com/years/"
-years_to_pull = ['2017', '2018', '2019', '2020', '2021', '2022']
-stats_to_pull = ['passing', 'rushing', 'receiving']
+#years_to_pull = ['2017', '2018', '2019', '2020', '2021', '2022']
+years_to_pull = ['2022']
+#stats_to_pull = ['passing', 'rushing', 'receiving']
+stats_to_pull = ['passing']
 
 for year in years_to_pull:
     for stat in stats_to_pull:

@@ -24,8 +24,8 @@ const Landing = () => {
             <p>Insight into which players have had the most success over the last few years.</p>
             </div>
             <div className="feature">
-            <h2>Player Projections (Coming soon!)</h2>
-            <p>Predict the future of fantasy football with player projections based on numerous data points.</p>
+            <h2>Analysis Playground (Coming soon!)</h2>
+            <p>Filter, sort, and analyze fantasy data however you want using our data analysis playground!</p>
             </div>
         </section>
         <footer>

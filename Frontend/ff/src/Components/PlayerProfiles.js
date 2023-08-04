@@ -1,26 +1,14 @@
 import React, { useState, useEffect} from 'react';
 import '../Styles/PlayerProfiles.css';
 import axios from 'axios';
+import FadeIn from '../Components/FadeIn.js';
 
 function PlayerProfiles() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [data, setData] = useState([]);
   const [suggestions, setSuggestions] = useState([]);
   const [selectedSuggestion, setSelectedSuggestion] = useState(null);
   const [playerData, setPlayerData] = useState(null);
   const [searchBoxTop, setSearchBoxTop] = useState(false);
-
-
-
-  const handleSearch = async () => {
-    try {
-      const response = await axios.get(`http://localhost:5000/search?searchTerm=${searchTerm}`);
-      console.log(response);
-      setData(response.data);
-    } catch (error) {
-      console.error('API request error:', error);
-    }
-  };
 
   const handleInputChange = (value) => {
     setSearchTerm(value);
@@ -63,7 +51,8 @@ function PlayerProfiles() {
     }
   }, [selectedSuggestion]);
 
-  return (   
+  return (  
+  <FadeIn>
     <div className={`PlayerProfiles ${searchBoxTop ? 'search-top' : 'search-middle'}`}>
       <div className="PlayerProfiles">
         <div className="search-bar">
@@ -74,7 +63,6 @@ function PlayerProfiles() {
             onChange={(e) => handleInputChange(e.target.value)}
             placeholder="Search Player"
           />
-          {/* <button onClick={handleSearch}>Search</button> */}
           <div className="suggestions">
             {suggestions.map((suggestion, index) => (
               <div key={index} className={`suggestion ${selectedSuggestion === suggestion ? 'selected' : ''}`}
@@ -91,7 +79,7 @@ function PlayerProfiles() {
             </div>
           )}
         </div>
-        <table>
+        <table className="data-table">
         {selectedSuggestion && ( 
           <thead>
             <tr>
@@ -122,6 +110,7 @@ function PlayerProfiles() {
         </table> 
       </div>
     </div>
+  </FadeIn>
   );
           };
 
