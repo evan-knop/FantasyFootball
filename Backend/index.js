@@ -22,6 +22,21 @@ connection.connect((err) => {
   console.log('Connected to MySQL database!');
 });
 
+app.get('/playerData/', (req, res) => {
+    // Query database to fetch player data
+    const query = 'SELECT * FROM total_stats LIMIT 10;';
+  
+    connection.query(query, (err, results) => {
+      if (err) {
+        console.error('Database query error:', err);
+        res.status(500).send('Error fetching data');
+      } else {
+        const allData = results;
+        res.json(allData);
+      }
+    });
+  });
+
 app.get('/suggestions/:value', (req, res) => {
     const value = req.params.value;
     const query = `SELECT DISTINCT player_name FROM total_stats WHERE player_name LIKE ? LIMIT 5`

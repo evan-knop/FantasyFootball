@@ -5,6 +5,7 @@ import Landing from './Landing';
 import Layout from './Components/Layout';
 import PlayerProfiles from './Components/PlayerProfiles';
 import Roadmap from './Components/Roadmap';
+import PositionLeaders from './Components/PositionLeaders';
 
 const App = () => {
 return (
@@ -13,6 +14,7 @@ return (
       <Routes>
         <Route exact path="/" element={<Landing />} />
         <Route exact path="/PlayerProfiles" element={<PlayerProfiles />} />
+        <Route exact path="/PositionLeaders" element={<PositionLeaders />} />
         <Route exact path="/Roadmap" element={<Roadmap />} />
       </Routes>
     </Layout>

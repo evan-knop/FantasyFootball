@@ -1,0 +1,17 @@
+.matrix-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .data-matrix {
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .data-matrix th,
+  .data-matrix td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+  }
+  

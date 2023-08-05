@@ -15,6 +15,9 @@ const Layout = ({ children }) => {
             <Link to="/PlayerProfiles">Player Profiles</Link>
           </li>
           <li>
+            <Link to="/PositionLeaders">Position Leaders</Link>
+          </li>
+          <li>
             <Link to="/Roadmap">Site Roadmap</Link>
           </li>
         </ul>

@@ -20,8 +20,10 @@ const Landing = () => {
                 </Link>
             </div>
             <div className="feature">
-            <h2>Positional Leaders</h2>
-            <p>Insight into which players have had the most success over the last few years.</p>
+                <Link to="/PositionLeaders">
+                    <h2>Positional Leaders</h2>
+                    <p>Insight into which players have had the most success over the last few years.</p>
+                </Link>
             </div>
             <div className="feature">
             <h2>Analysis Playground (Coming soon!)</h2>

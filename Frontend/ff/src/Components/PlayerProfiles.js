@@ -86,6 +86,7 @@ function PlayerProfiles() {
               <th>Year</th>
               <th>Team</th>
               <th>Games Played</th>
+              <th>Receptions</th>
               <th>Total Yards</th>
               <th>Total TDs</th>
               <th>Fantasy Points</th>
@@ -101,6 +102,7 @@ function PlayerProfiles() {
               <th>Games Played</th>
               <th>Passing Yards</th>
               <th>Passing TDs</th>
+              <th>Interceptions</th>
               <th>Fantasy Points</th>
               <th>Position Rank</th>
             </tr>
@@ -113,6 +115,7 @@ function PlayerProfiles() {
                 <td>{item.year}</td>
                 <td>{item.team}</td>
                 <td>{item.games_played}</td>
+                <td>{item.receptions}</td>
                 <td>{item.total_yards}</td>
                 <td>{item.total_tds}</td>               
                 <td>{item.ppr_total_points}</td>
@@ -128,7 +131,8 @@ function PlayerProfiles() {
                 <td>{item.team}</td>
                 <td>{item.games_played}</td>
                 <td>{item.passing_yards}</td>
-                <td>{item.passing_tds}</td>               
+                <td>{item.passing_tds}</td>  
+                <td>{item.interceptions}</td>             
                 <td>{item.ppr_total_points}</td>
                 <td>{item.half_ppr_pos_rank}</td>
               </tr>
