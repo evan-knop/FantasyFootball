@@ -16,20 +16,19 @@ const Roadmap = () => {
 
   const roadmapData = [
     {
-      title: 'Feature 1',
-      description: 'Description of Feature 1 Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      title: 'Analysis Playground',
+      description: 'DIY analysis playground to provide users with a self-service tool to gain new fantasy football insights.',
     },
     {
       title: 'Feature 2',
       description: 'Description of Feature 2 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
-    // Add more feature data
   ];
 
   return (
     <FadeIn>
         <div className="roadmap-container">
-        <h1>Project Roadmap</h1>
+        <h1>Site Roadmap</h1>
         <div className="timeline">
             {roadmapData.map((feature, index) => (
             <div key={index} className={`timeline-item ${expandedSections.includes(index) ? 'expanded' : ''}`}>

@@ -80,7 +80,7 @@ function PlayerProfiles() {
           )}
         </div>
         <table className="data-table">
-        {selectedSuggestion && ( 
+        {selectedSuggestion && playerData && playerData[0].position !== "QB" && ( 
           <thead>
             <tr>
               <th>Year</th>
@@ -93,7 +93,20 @@ function PlayerProfiles() {
             </tr>
           </thead>  
           )}
-          {selectedSuggestion && playerData && (
+        {selectedSuggestion && playerData && playerData[0].position === "QB" && ( 
+          <thead>
+            <tr>
+              <th>Year</th>
+              <th>Team</th>
+              <th>Games Played</th>
+              <th>Passing Yards</th>
+              <th>Passing TDs</th>
+              <th>Fantasy Points</th>
+              <th>Position Rank</th>
+            </tr>
+          </thead>  
+          )}
+          {selectedSuggestion && playerData && playerData[0].position !== "QB" && (
           <tbody>
             {playerData.map((item) => (
               <tr key={item.view_key}>
@@ -102,6 +115,20 @@ function PlayerProfiles() {
                 <td>{item.games_played}</td>
                 <td>{item.total_yards}</td>
                 <td>{item.total_tds}</td>               
+                <td>{item.ppr_total_points}</td>
+                <td>{item.half_ppr_pos_rank}</td>
+              </tr>
+            ))}
+          </tbody> )}
+          {selectedSuggestion && playerData && playerData[0].position === 'QB' &&(
+          <tbody>
+            {playerData.map((item) => (
+              <tr key={item.view_key}>
+                <td>{item.year}</td>
+                <td>{item.team}</td>
+                <td>{item.games_played}</td>
+                <td>{item.passing_yards}</td>
+                <td>{item.passing_tds}</td>               
                 <td>{item.ppr_total_points}</td>
                 <td>{item.half_ppr_pos_rank}</td>
               </tr>
