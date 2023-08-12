@@ -20,8 +20,8 @@ const Roadmap = () => {
       description: 'DIY analysis playground to provide users with a self-service tool to gain new fantasy football insights.',
     },
     {
-      title: 'Feature 2',
-      description: 'Description of Feature 2 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      title: 'Expanded Stats in Player Profile',
+      description: 'Display even more statistics, such as weekly performances (updated weekly), College stats, etc..',
     },
   ];
 
