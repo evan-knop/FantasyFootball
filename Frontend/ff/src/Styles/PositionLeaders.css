@@ -15,3 +15,20 @@
     text-align: center;
   }
   
+.filter-container {
+    margin-bottom: 20px;
+  }
+  
+  .filter-label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .filter-select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

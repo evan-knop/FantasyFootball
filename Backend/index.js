@@ -23,10 +23,21 @@ connection.connect((err) => {
 });
 
 app.get('/playerData/', (req, res) => {
-    // Query database to fetch player data
-    const query = 'SELECT * FROM player_rankings LIMIT 10;';
-  
-    connection.query(query, (err, results) => {
+
+    const { playerName, position } = req.query
+
+    let query = 'SELECT * FROM player_rankings';
+
+    const queryParams = [];
+
+    if(position) {
+        query += ' WHERE position = ?';
+        queryParams.push(position);
+    }
+
+    query += ' LIMIT 10';
+
+    connection.query(query, queryParams, (err, results) => {
       if (err) {
         console.error('Database query error:', err);
         res.status(500).send('Error fetching data');

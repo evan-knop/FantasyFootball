@@ -5,16 +5,54 @@ import FadeIn from '../Components/FadeIn.js';
 
 const PositionLeaders = () => {
   const [matrixData, setMatrixData] = useState([]);
+  const [selectedPosition, setSelectedPosition] = useState('');
+
 
   useEffect(() => {
-    // Replace with your API endpoint
-    axios.get('http://localhost:5000/playerData').then((response) => {
+    fetchData();
+  }, [selectedPosition]);
+
+  const fetchData = () => {
+    const queryParams = {};
+    if (selectedPosition) {
+        queryParams.position = selectedPosition;
+    }
+
+    axios.get('http://localhost:5000/playerData', { params: queryParams })
+    .then((response) => {
       setMatrixData(response.data);
+    })
+    .catch((error) => {
+        console.error('Error fetching data:', error)
     });
-  }, []);
+  };
+
+    // Filter matrixData based on the selectedPosition
+    const filteredData = selectedPosition
+    ? matrixData.filter((row) => row.position === selectedPosition)
+    : matrixData;
+
+  const handlePositionChange = (e) => {
+    setSelectedPosition(e.target.value);
+  };
 
   return (
     <div className="matrix-container">
+        <div className="filter-container">
+            <label htmlFor="positionFilter">Filter by Position:</label>
+            <select
+            id="positionFilter"
+            value={selectedPosition}
+            onChange={handlePositionChange}
+            >
+            <option value="">All</option>
+            <option value="QB" selected>QB</option>
+            <option value="RB">RB</option>
+            <option value="WR">WR</option>
+            <option value="TE">TE</option>
+
+            </select>
+        </div>
       <table className="data-matrix">
         <thead>
           <tr>
