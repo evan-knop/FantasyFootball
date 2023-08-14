@@ -13,28 +13,30 @@ const PositionLeaders = () => {
     });
   }, []);
 
-  const years = Array.from(new Set(matrixData.map((item) => item.year))).sort();
-
   return (
     <div className="matrix-container">
       <table className="data-matrix">
         <thead>
           <tr>
             <th>Name</th>
-            {years.map((year) => (
-              <th key={year}>{year}</th>
-            ))}
+            <th>2017</th>
+            <th>2018</th>
+            <th>2019</th>
+            <th>2020</th>
+            <th>2021</th>
+            <th>2022</th>
           </tr>
         </thead>
         <tbody>
           {matrixData.map((row, index) => (
             <tr key={index}>
               <td>{row.player_name}</td>
-              {years.map((year) => (
-                <td key={year}>
-                  {matrixData.find((item) => item.player_name === row.name && item.year === year)?.value || ''}
-                </td>
-              ))}
+              <td>{row.PosRank2017}</td>
+              <td>{row.PosRank2018}</td>
+              <td>{row.PosRank2019}</td>
+              <td>{row.PosRank2020}</td>
+              <td>{row.PosRank2021}</td>
+              <td>{row.PosRank2022}</td>
             </tr>
           ))}
         </tbody>

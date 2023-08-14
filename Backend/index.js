@@ -24,7 +24,7 @@ connection.connect((err) => {
 
 app.get('/playerData/', (req, res) => {
     // Query database to fetch player data
-    const query = 'SELECT * FROM total_stats LIMIT 10;';
+    const query = 'SELECT * FROM player_rankings LIMIT 10;';
   
     connection.query(query, (err, results) => {
       if (err) {
