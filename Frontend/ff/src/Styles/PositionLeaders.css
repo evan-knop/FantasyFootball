@@ -54,3 +54,15 @@
     color: #777;
   }
   
+  /* Apply conditional formatting colors */
+.positive {
+    background-color: #c1e6c1; /* Light green */
+  }
+  
+  .negative {
+    background-color: #ffc1c1; /* Light red */
+  }
+  
+  .nogames {
+    background-color: black;
+  }
