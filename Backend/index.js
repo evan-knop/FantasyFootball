@@ -35,7 +35,7 @@ app.get('/playerData/', (req, res) => {
         queryParams.push(position);
     }
 
-    query += ' ORDER BY SUBSTRING(CAST(PosRank2022 AS UNSIGNED),3) LIMIT 10';
+    query += ' ORDER BY CAST(SUBSTRING(PosRank2022, 3) AS UNSIGNED) LIMIT 10';
 
     connection.query(query, queryParams, (err, results) => {
       if (err) {
