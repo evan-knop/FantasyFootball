@@ -31,11 +31,11 @@ app.get('/playerData/', (req, res) => {
     const queryParams = [];
 
     if(position) {
-        query += ' WHERE position = ?';
+        query += ' WHERE position = ? AND PosRank2022 IS NOT NULL';
         queryParams.push(position);
     }
 
-    query += ' LIMIT 10';
+    query += ' ORDER BY SUBSTRING(CAST(PosRank2022 AS UNSIGNED),3) LIMIT 10';
 
     connection.query(query, queryParams, (err, results) => {
       if (err) {
