@@ -71,12 +71,12 @@ const PositionLeaders = () => {
                 {matrixData.map((row, index) => (
                     <tr key={index}>
                     <td>{row.player_name}</td>
-                    <td className={row.PosRank2017 == null ? 'nogames' : row.PosRank2017.substring(2) < 13 ? 'positive' : 'negative'}>{row.PosRank2017}</td>
-                    <td className={row.PosRank2018 == null ? 'nogames' : row.PosRank2018.substring(2) < 13 ? 'positive' : 'negative'}>{row.PosRank2018}</td>
-                    <td className={row.PosRank2019 == null ? 'nogames' : row.PosRank2019.substring(2) < 13 ? 'positive' : 'negative'}>{row.PosRank2019}</td>
-                    <td className={row.PosRank2020 == null ? 'nogames' : row.PosRank2020.substring(2) < 13 ? 'positive' : 'negative'}>{row.PosRank2020}</td>
-                    <td className={row.PosRank2021 == null ? 'nogames' : row.PosRank2021.substring(2) < 13 ? 'positive' : 'negative'}>{row.PosRank2021}</td>
-                    <td className={row.PosRank2022 == null ? 'nogames' : row.PosRank2022.substring(2) < 13 ? 'positive' : 'negative'}>{row.PosRank2022}</td>
+                    <td className={row.PosRank2017 == null ? 'nogames' : row.PosRank2017.substring(2) < 13 ? 'positive' : row.PosRank2017.substring(2) >= 13 && row.PosRank2017.substring(2) < 25 ? 'neutral' : 'negative'}>{row.PosRank2017}</td>
+                    <td className={row.PosRank2018 == null ? 'nogames' : row.PosRank2018.substring(2) < 13 ? 'positive' : row.PosRank2018.substring(2) >= 13 && row.PosRank2018.substring(2) < 25 ? 'neutral' : 'negative'}>{row.PosRank2018}</td>
+                    <td className={row.PosRank2019 == null ? 'nogames' : row.PosRank2019.substring(2) < 13 ? 'positive' : row.PosRank2019.substring(2) >= 13 && row.PosRank2019.substring(2) < 25 ? 'neutral' : 'negative'}>{row.PosRank2019}</td>
+                    <td className={row.PosRank2020 == null ? 'nogames' : row.PosRank2020.substring(2) < 13 ? 'positive' : row.PosRank2020.substring(2) >= 13 && row.PosRank2020.substring(2) < 25 ? 'neutral' : 'negative'}>{row.PosRank2020}</td>
+                    <td className={row.PosRank2021 == null ? 'nogames' : row.PosRank2021.substring(2) < 13 ? 'positive' : row.PosRank2021.substring(2) >= 13 && row.PosRank2021.substring(2) < 25 ? 'neutral' : 'negative'}>{row.PosRank2021}</td>
+                    <td className={row.PosRank2022 == null ? 'nogames' : row.PosRank2022.substring(2) < 13 ? 'positive' : row.PosRank2022.substring(2) >= 13 && row.PosRank2022.substring(2) < 25 ? 'neutral' : 'negative'}>{row.PosRank2022}</td>
                     </tr>
                 ))}
                 </tbody>

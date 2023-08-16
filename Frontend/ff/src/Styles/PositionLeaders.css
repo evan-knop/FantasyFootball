@@ -59,10 +59,14 @@
     background-color: #c1e6c1; /* Light green */
   }
   
-  .negative {
+.negative {
     background-color: #ffc1c1; /* Light red */
   }
   
-  .nogames {
+.nogames {
     background-color: black;
   }
+
+.neutral {
+    background-color: #feffb4;
+}
