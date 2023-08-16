@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -35,7 +37,7 @@ app.get('/playerData/', (req, res) => {
         queryParams.push(position);
     }
 
-    query += ' ORDER BY CAST(SUBSTRING(PosRank2022, 3) AS UNSIGNED) LIMIT 10';
+    query += ' ORDER BY CAST(SUBSTRING(PosRank2022, 3) AS UNSIGNED) LIMIT 20';
 
     connection.query(query, queryParams, (err, results) => {
       if (err) {
@@ -85,3 +87,5 @@ app.get('/playerData/:playerName', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
