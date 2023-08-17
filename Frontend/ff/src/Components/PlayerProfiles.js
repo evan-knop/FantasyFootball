@@ -119,7 +119,7 @@ function PlayerProfiles() {
                 <td>{item.total_yards}</td>
                 <td>{item.total_tds}</td>               
                 <td>{item.ppr_total_points}</td>
-                <td>{item.half_ppr_pos_rank}</td>
+                <td className={item.half_ppr_pos_rank == null ? 'nogames' : item.half_ppr_pos_rank.substring(2) < 13 ? 'positive' : item.half_ppr_pos_rank.substring(2) >= 13 && item.half_ppr_pos_rank.substring(2) < 25 ? 'neutral' : 'negative'}>{item.half_ppr_pos_rank}</td>
               </tr>
             ))}
           </tbody> )}
@@ -134,7 +134,7 @@ function PlayerProfiles() {
                 <td>{item.passing_tds}</td>  
                 <td>{item.interceptions}</td>             
                 <td>{item.ppr_total_points}</td>
-                <td>{item.half_ppr_pos_rank}</td>
+                <td className={item.half_ppr_pos_rank == null ? 'nogames' : item.half_ppr_pos_rank.substring(2) < 13 ? 'positive' : item.half_ppr_pos_rank.substring(2) >= 13 && item.half_ppr_pos_rank.substring(2) < 25 ? 'neutral' : 'negative'}>{item.half_ppr_pos_rank}</td>
               </tr>
             ))}
           </tbody> )}
