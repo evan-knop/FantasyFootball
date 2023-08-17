@@ -23,6 +23,10 @@ const Roadmap = () => {
       title: 'Expanded Stats in Player Profile',
       description: 'Display even more statistics, such as weekly performances (updated weekly), College stats, etc..',
     },
+    {
+        title: 'Projections',
+        description: 'Project upcoming season stats based on statistical models created using the data collected.'
+    }
   ];
 
   return (
