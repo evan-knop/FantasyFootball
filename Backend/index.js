@@ -11,12 +11,12 @@ const port = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
-// MySQL configuration
+// MySQL configuration 
 const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'FANTASY_FOOTBALL',
+  host: 'us-cdbr-east-06.cleardb.net',
+  user: 'bcbe4cc26f9210',
+  password: '545df820',
+  database: 'heroku_59ca7044a5a301e',
 });
 
 connection.connect((err) => {
