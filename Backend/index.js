@@ -22,10 +22,6 @@ connection.connect((err) => {
   console.log('Connected to MySQL database!');
 });
 
-app.get('/', function(req, res) {
-  res.render('index.html');
-});
-
 app.get('/playerData/', (req, res) => {
 
     const { playerName, position } = req.query
