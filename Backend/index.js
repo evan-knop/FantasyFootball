@@ -1,13 +1,10 @@
-
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
 
 const app = express();
-const port = process.env.PORT
-;
+const port = process.env.PORT;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -23,6 +20,10 @@ const connection = mysql.createConnection({
 connection.connect((err) => {
   if (err) throw err;
   console.log('Connected to MySQL database!');
+});
+
+app.get('/', (req, res) => {
+
 });
 
 app.get('/playerData/', (req, res) => {
