@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
-  "main": "./index.js",
+  "main": "./App.js",
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd Frontend && cd ff && npm install && npm run build"
