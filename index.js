@@ -8,6 +8,8 @@ const port = process.env.PORT;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+
 
 // MySQL configuration 
 const connection = mysql.createConnection({
@@ -15,7 +17,7 @@ const connection = mysql.createConnection({
   user: 'bcbe4cc26f9210',
   password: '545df820',
   database: 'heroku_59ca7044a5a301e',
-});
+}); 
 
 connection.connect((err) => {
   if (err) throw err;
