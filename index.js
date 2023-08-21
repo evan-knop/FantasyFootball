@@ -4,21 +4,30 @@ const cors = require('cors');
 const mysql = require('mysql');
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
-//app.use(express.static(path.resolve(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, 'build')));
 
 
-// MySQL configuration 
+// MySQL configuration  
+
 const connection = mysql.createConnection({
   host: 'us-cdbr-east-06.cleardb.net',
   user: 'bcbe4cc26f9210',
   password: '545df820',
   database: 'heroku_59ca7044a5a301e',
 }); 
-
+/*
+// Local Connection
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'root',
+  database: 'FANTASY_FOOTBALL',
+}); 
+*/
 connection.connect((err) => {
   if (err) throw err;
   console.log('Connected to MySQL database!');
@@ -88,8 +97,8 @@ app.get('/playerData/:playerName', (req, res) => {
   });
 
   app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', './index.html'));
-  });
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+ });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
