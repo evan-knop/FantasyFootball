@@ -35,10 +35,11 @@ connection.connect((err) => {
   if (err) throw err;
   console.log('Connected to MySQL database!');
 });
-
+/*
 app.get("/", (req, res) => {
   res.send("Hello nerd");
 });
+*/
 
 app.get('/playerData/', (req, res) => {
 
