@@ -2,13 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql');
+const path = require('path');
+
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, './ff/build')));
+console.log('dirname: ' + __dirname)
+app.use(express.static(path.join(__dirname, '../ff/build')));
 
 
 // MySQL configuration  
