@@ -11,7 +11,6 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 console.log('dirname: ' + __dirname)
-console.log(ls)
 app.use(express.static(path.join(__dirname, '../ff/build')));
 
 
