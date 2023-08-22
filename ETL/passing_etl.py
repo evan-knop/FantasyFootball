@@ -3,11 +3,19 @@ import pandas as pd
 import glob
 
 #Connecting to MySQL DB - local host
-conn = mysql.connector.connect(
+""" conn = mysql.connector.connect(
     host = "localhost",
     user = "root",
     password = "root",
     database = "FANTASY_FOOTBALL"
+) """
+
+#Connecting to ClearDB - Remote
+conn = mysql.connector.connect(
+    host = "us-cdbr-east-06.cleardb.net",
+    user = "bcbe4cc26f9210",
+    password = "545df820",
+    database = "heroku_59ca7044a5a301e"
 )
 
 #Create cursor object
@@ -24,7 +32,7 @@ df = df.where((pd.notnull(df)), None)
 df = df.fillna(0)
 
 #Truncate table before reloading
-cursor.execute("TRUNCATE TABLE FANTASY_FOOTBALL.passing")
+#cursor.execute("TRUNCATE TABLE FANTASY_FOOTBALL.passing")
 
  #loop through the data frame
 for i,row in df.iterrows():

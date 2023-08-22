@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "heroku-postbuild": "cd Frontend && cd ff && npm install && npm run build",
-    "build": "create-react-app && npm start"
+    "build": "create-react-app && npm run build"
     },
   "keywords": [],
   "author": "",

@@ -23,7 +23,7 @@ df = df.where((pd.notnull(df)), None)
 df = df.fillna(0)
 
 #Truncate table before reloading
-#cursor.execute("TRUNCATE TABLE heroku_59ca7044a5a301e.players")
+cursor.execute("TRUNCATE TABLE heroku_59ca7044a5a301e.players")
 
  #loop through the data frame
 for i,row in df.iterrows():
