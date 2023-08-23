@@ -4,10 +4,10 @@ import glob, time
 
 #Connecting to MySQL DB - local host
 conn = mysql.connector.connect(
-    host = "us-cdbr-east-06.cleardb.net",
-    user = "bcbe4cc26f9210",
-    password = "545df820",
-    database = "heroku_59ca7044a5a301e"
+    host = "x8autxobia7sgh74.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    user = "ocodf96j5psl63w2",
+    password = "sp56qfrb5yqhxg5o",
+    database = "xojsllvnlgwf8y03"
 )
 #Create cursor
 cursor = conn.cursor()
@@ -23,14 +23,14 @@ df = df.where((pd.notnull(df)), None)
 df = df.fillna(0)
 
 #Truncate table before reloading
-cursor.execute("TRUNCATE TABLE heroku_59ca7044a5a301e.players")
+cursor.execute("TRUNCATE TABLE xojsllvnlgwf8y03.players")
 
  #loop through the data frame
 for i,row in df.iterrows():
     #Skip the empty rows from scraping header rows off of FBRef
     if len(row[0]) <= 4:
         continue
-    sql = "INSERT IGNORE INTO heroku_59ca7044a5a301e.players VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
+    sql = "INSERT IGNORE INTO xojsllvnlgwf8y03.players VALUES (%s,%s,%s,%s,%s,%s,%s,%s)"
     cursor.execute(sql, tuple(row))
     
     print("Record inserted")
