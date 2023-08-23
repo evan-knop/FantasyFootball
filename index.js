@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 console.log('dirname: ' + __dirname)
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'Frontend/ff/build')));
 
 
 // MySQL configuration  
