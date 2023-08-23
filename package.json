@@ -8,6 +8,7 @@
     "heroku-postbuild": "cd Frontend && cd ff && npm install && npm run build"
       },
   "proxy": "http://localhost:5000",
+  "homepage": "https://unicornff-9c4b253cde0d.herokuapp.com/",
   "keywords": [],
   "author": "",
   "license": "ISC",
