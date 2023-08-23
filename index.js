@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'Frontend/ff/build')));
 
 // MySQL configuration  
 
-const connection = mysql.createConnection({
+const connection = mysql.createPool({
   host: 'us-cdbr-east-06.cleardb.net',
   user: 'bcbe4cc26f9210',
   password: '545df820',
@@ -31,11 +31,12 @@ const connection = mysql.createConnection({
   database: 'FANTASY_FOOTBALL',
 }); 
 */
-
+/*
 connection.connect((err) => {
   if (err) throw err;
   console.log('Connected to MySQL database!');
 });
+*/
 /*
 app.get("/", (req, res) => {
   res.send("Hello nerd");
