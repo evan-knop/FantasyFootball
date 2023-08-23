@@ -8,6 +8,7 @@
     "heroku-postbuild": "cd Frontend && cd ff && npm install && npm run build",
     "build": "create-react-app && npm run build"
     },
+  "proxy": "http://localhost:5000",
   "keywords": [],
   "author": "",
   "license": "ISC",
