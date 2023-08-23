@@ -100,11 +100,11 @@ app.get('/playerData/:playerName', (req, res) => {
       }
     });
   });
-/*
+
   app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, '/Frontend/ff/public/index.html'));
- });
- */
+    res.sendFile(path.resolve('Frontend', 'ff', 'build', 'index.html'));
+   });
+ 
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
