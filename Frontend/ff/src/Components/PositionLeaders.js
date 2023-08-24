@@ -17,7 +17,7 @@ const PositionLeaders = () => {
         queryParams.position = selectedPosition;
     }
 
-    axios.get('http://localhost:5000/playerData', { params: queryParams })
+    axios.get('/playerData', { params: queryParams })
     .then((response) => {
       setMatrixData(response.data);
     })
