@@ -14,13 +14,13 @@ console.log('dirname: ' + __dirname)
 app.use(express.static(path.join(__dirname, 'Frontend/ff/build')));
 
 
-// MySQL configuration  
+// MySQL remote configuration  
 
 const connection = mysql.createPool({
-  host: 'us-cdbr-east-06.cleardb.net',
-  user: 'bcbe4cc26f9210',
-  password: '545df820',
-  database: 'heroku_59ca7044a5a301e',
+  host: 'x8autxobia7sgh74.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+  user: 'ocodf96j5psl63w2',
+  password: 'sp56qfrb5yqhxg5o',
+  database: 'xojsllvnlgwf8y03',
 }); 
 /*
 // Local Connection
