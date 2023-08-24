@@ -17,7 +17,7 @@ function PlayerProfiles() {
 
   const fetchSuggestions = async (value) => {
     try {
-      const response = await axios.get(`http://localhost:5000/suggestions/${value}`);
+      const response = await axios.get(`/suggestions/${value}`);
       setSuggestions(response.data);
     } catch (error) {
       console.error('API request error:', error);
@@ -31,7 +31,7 @@ function PlayerProfiles() {
 
 
     try {
-      const response = await axios.get(`http://localhost:5000/playerData/${suggestion}`);
+      const response = await axios.get(`/playerData/${suggestion}`);
       setPlayerData(response.data);
     } catch (error) {
       console.error('API request error:', error);
