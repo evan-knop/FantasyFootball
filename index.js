@@ -15,33 +15,12 @@ app.use(express.static(path.join(__dirname, 'Frontend/ff/build')));
 
 
 // MySQL remote configuration  
-
 const connection = mysql.createPool({
   host: 'x8autxobia7sgh74.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
   user: 'ocodf96j5psl63w2',
   password: 'sp56qfrb5yqhxg5o',
   database: 'xojsllvnlgwf8y03',
 }); 
-/*
-// Local Connection
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  database: 'FANTASY_FOOTBALL',
-}); 
-*/
-/*
-connection.connect((err) => {
-  if (err) throw err;
-  console.log('Connected to MySQL database!');
-});
-*/
-/*
-app.get("/", (req, res) => {
-  res.send("Hello nerd");
-});
-*/
 
 app.get('/playerData/', (req, res) => {
 
