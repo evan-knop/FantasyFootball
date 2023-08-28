@@ -64,7 +64,7 @@ function PlayerProfiles() {
             placeholder="Search Player"
           />
           <div className="suggestions">
-            {suggestions.map((suggestion, index) => (
+            {suggestions.map((suggestion, index) => ( 
               <div key={index} className={`suggestion ${selectedSuggestion === suggestion ? 'selected' : ''}`}
               onClick={() => handleSuggestionSelect(suggestion)}>
                 {suggestion}
