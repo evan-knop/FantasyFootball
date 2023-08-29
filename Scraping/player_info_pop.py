@@ -14,6 +14,8 @@ i=0
 
 for i in range(len(player_list)):
     current_url = base_url + player_list[i][0]
+    if player_list[i][0]:
+        player_id = player_list[i][0].split('/')[-1].split('.')[0]
 
     page = requests.get(current_url)
     soup = BeautifulSoup(page.content, "html.parser")
@@ -25,6 +27,9 @@ for i in range(len(player_list)):
 
     #Split text into array
     player_info = player_info.splitlines()
+
+    #Scrape Player Id
+    player_info_array[i].append(player_id)
     
     #Scrape Player Name
     player_info_array[i].append(player_info[4])
