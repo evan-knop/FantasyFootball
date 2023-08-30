@@ -68,7 +68,7 @@ app.get('/playerData/:playerName', (req, res) => {
     const playerName = req.params.playerName;
   
     // Query database to fetch player data based on the player name
-    const query = 'SELECT * FROM total_stats WHERE player_name = ? ORDER BY YEAR DESC';
+    const query = 'SELECT ts.*, pi.photo FROM total_stats ts JOIN player_info pi ON pi.player_id = ts.player_id WHERE player_name = ? ORDER BY YEAR DESC';
   
     connection.query(query, [playerName], (err, results) => {
       if (err) {

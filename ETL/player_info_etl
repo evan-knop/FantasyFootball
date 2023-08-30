@@ -28,13 +28,21 @@ cursor.execute("TRUNCATE TABLE xojsllvnlgwf8y03.player_info")
 #loop through the data frame
 for i,row in df.iterrows():
     #Skip the empty rows from scraping header rows off of FBRef
-    if len(row[0]) <= 4:
-        continue
+    if row[0]:
+        if len(row[0]) <= 4:
+            continue
+    
+    #Trim characters off filename
+    if (row[4]):
+        start_index = row[4].find('"') + 1
+        end_index = row[4].find('"', start_index)
+        trim_photo = row[4][start_index:end_index]
 
-    with open(row[3], "rb") as image_file:
-        image_data = image_file.read()
 
-    sql = "INSERT INTO xojsllvnlgwf8y03.player_info VALUES (%s,%s,%s,%s)"
+    with open("./Scraping/photos/" + trim_photo, "rb") as image_file:
+        row[4] = image_file.read()
+
+    sql = "INSERT INTO xojsllvnlgwf8y03.player_info VALUES (%s,%s,%s,%s,%s)"
     cursor.execute(sql, tuple(row))
     
     print("Record inserted")
