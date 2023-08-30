@@ -91,6 +91,7 @@ function PlayerProfiles() {
               <th>Total TDs</th>
               <th>Fantasy Points</th>
               <th>Position Rank</th>
+              <th>Photo</th>
             </tr>
           </thead>  
           )}
@@ -119,6 +120,7 @@ function PlayerProfiles() {
                 <td>{item.total_yards}</td>
                 <td>{item.total_tds}</td>               
                 <td>{item.ppr_total_points}</td>
+                <td>{item.photo}</td>
                 <td className={item.half_ppr_pos_rank == null ? 'nogames' : item.half_ppr_pos_rank.substring(2) < 13 ? 'positive' : item.half_ppr_pos_rank.substring(2) >= 13 && item.half_ppr_pos_rank.substring(2) < 25 ? 'neutral' : 'negative'}>{item.half_ppr_pos_rank}</td>
               </tr>
             ))}
