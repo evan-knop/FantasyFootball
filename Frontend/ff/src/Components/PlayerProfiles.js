@@ -141,7 +141,7 @@ function PlayerProfiles() {
           </tbody> )}
         </table> 
       </div>
-      <div>{selectedSuggestion && playerData && (<img src={`data:image/jpeg;base64,${playerData.photo}`} alt="Image" />)}</div>
+      <div>{selectedSuggestion && playerData && (<img src={`data:image/jpeg;base64,${playerData[0]}`} alt="Image" />)}</div>
     </div>
   </FadeIn>
   );
