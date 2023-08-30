@@ -141,6 +141,7 @@ function PlayerProfiles() {
           </tbody> )}
         </table> 
       </div>
+      <div><img src={`data:image/jpeg;base64,${playerData.photo}`} alt="Image" /></div>
     </div>
   </FadeIn>
   );

@@ -76,7 +76,7 @@ app.get('/playerData/:playerName', (req, res) => {
         res.status(500).send('Error fetching player data');
       } else {
         if(results){
-          results[0].photo.toString('base64');
+          results[0] = results[0].photo.toString('base64');
         }
         const playerData = results;
         res.json(playerData);
