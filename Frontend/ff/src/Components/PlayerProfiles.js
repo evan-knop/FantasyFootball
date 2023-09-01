@@ -64,12 +64,12 @@ function PlayerProfiles() {
             placeholder="Search Player"
           />
           <div className="suggestions">
-            {suggestions.map((suggestion, index) => ( 
+            {selectedSuggestion && (suggestions.map((suggestion, index) => ( 
               <div key={index} className={`suggestion ${selectedSuggestion === suggestion ? 'selected' : ''}`}
               onClick={() => handleSuggestionSelect(suggestion)}>
                 {suggestion}
               </div>
-            ))}
+            )))}
           </div>
         </div>
         <div className="selected-data">
